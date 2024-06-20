@@ -34,18 +34,15 @@ Chacha Chaudhary: The Digital Guardian of Namami Gange is an interactive chatbot
  
   ## Screenshots
 
-Home Page
-![App Screenshot](./public/assets/1.png)
-Login Page
-![App Screenshot](./public/assets/3.png)
-SignUp Page
-![App Screenshot](./public/assets/2.png)
-Premium Calculator 
-![App Screenshot](./public/assets/4.png)
-HBOI - ChatBot 
-![App Screenshot](./public/assets/5.png)
-About Us
-![App Screenshot](./public/assets/6.png)
+
+![App Screenshot](./Screenshots/Screenshot 2024-06-20 130037.png)
+
+![App Screenshot](./Screenshots/Screenshot 2024-06-20 130153.png)
+
+![App Screenshot](./Screenshots/Screenshot 2024-06-20 130230.png)
+
+![App Screenshot](./Screenshots/Screenshot 2024-06-20 131109.png)
+
 
 ## Future Scope
 
