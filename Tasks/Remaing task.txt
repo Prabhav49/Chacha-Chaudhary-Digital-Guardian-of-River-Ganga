@@ -1,0 +1,14 @@
+<<<<<<< HEAD
+1) Banner Font and Text
+2) Speak button at bottom
+3) Hindi Speaking
+4) Chat History in Hindi
+5) Chup karane wala button
+=======
+1) Banner Font and Text
+2) Speak button at bottom
+3) Hindi Speaking
+4) Chat History in Hindi
+5) Chup karane wala button
+>>>>>>> 32e84ee0b39b60a128c7cace587dd13adbfd2aae
+6) 

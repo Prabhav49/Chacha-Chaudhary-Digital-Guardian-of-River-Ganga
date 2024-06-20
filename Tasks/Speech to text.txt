@@ -1,0 +1,217 @@
+<<<<<<< HEAD
+import streamlit as st
+from main import genai_engine
+from streamlit_navigation_bar import st_navbar
+import os
+import speech_recognition as sr
+
+st.set_page_config(page_title='Chacha Chaudhary: The Digital Guardian of Namami Gange', page_icon='C:\\Users\\nihar\\Downloads\\professor.png')
+
+parent_dir = os.path.dirname(os.path.abspath(__file__))
+logo_path = os.path.join(parent_dir, "nmcg_logo.svg")
+
+text = ["Chacha Chaudhary: The Digital Guardian of Namami Gange"]
+styles = {
+    "nav": {
+        "background-image": "linear-gradient(rgb(15, 18, 23), rgb(44, 62, 80))",
+        "justify-content": "left",
+        "height": "90px",
+    },
+    "img": {
+        "padding-right": "8px",
+        "height": "85px",
+        "width": "175px",
+    },
+    "span": {
+        "color": "white",
+        "font-size": "34px",
+        "width": "170%",
+        "font-family": "Times New Roman",
+    },
+    "active": {
+        "color": "white",
+        "font-size": "34px",
+        "width": "170%",
+        "font-family": "Times New Roman",
+    }
+}
+options = {
+    "show_menu": False,
+    "show_sidebar": False,
+}
+
+page = st_navbar(
+    text,
+    logo_path=logo_path,
+    styles=styles,
+    options=options,
+)
+
+st.header(" :blue[_Chacha Chaudhary's Gange Guide !_]", divider='rainbow')
+
+# Initialize chat history
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+
+# Function for voice recognition
+def recognize_speech():
+    recognizer = sr.Recognizer()
+    with sr.Microphone() as source:
+        st.write("Listening...")
+        audio = recognizer.listen(source)
+        st.write("Processing...")
+    try:
+        query = recognizer.recognize_google(audio)
+    except sr.UnknownValueError:
+        st.write("Sorry, I could not understand what you said.")
+        query = ""
+    return query
+
+# Add button for voice input
+if st.button("Speak"):
+    prompt = recognize_speech()
+    if prompt:
+        st.chat_message("user").markdown(prompt)
+        # Add user message to chat history
+        st.session_state.messages.append({"role": "user", "content": prompt})
+
+        response = genai_engine(prompt)
+        
+        # Display assistant response and image in a horizontal layout
+        st.write('<style>div.Widget.row-widget.stHorizontal</style>', unsafe_allow_html=True)
+        col1, col2 = st.columns([1, 10])
+        with col1:
+            st.image("E:\\Chacha\\chacha_small.png", width=50)
+        with col2:
+            st.markdown(response)
+
+        # Add assistant response to chat history
+        st.session_state.messages.append({"role": "assistant", "content": response})
+
+# React to user input
+if prompt := st.chat_input("What is up?"):
+    st.chat_message("user").markdown(prompt)
+    # Add user message to chat history
+    st.session_state.messages.append({"role": "user", "content": prompt})
+
+    response = genai_engine(prompt)
+    
+    # Display assistant response and image in a horizontal layout
+    st.write('<style>div.Widget.row-widget.stHorizontal</style>', unsafe_allow_html=True)
+    col1, col2 = st.columns([1, 10])
+    with col1:
+        st.image("E:\\Chacha\\chacha_small.png", width=50)
+    with col2:
+        st.markdown(response)
+
+    # Add assistant response to chat history
+    st.session_state.messages.append({"role": "assistant", "content": response})
+=======
+import streamlit as st
+from main import genai_engine
+from streamlit_navigation_bar import st_navbar
+import os
+import speech_recognition as sr
+
+st.set_page_config(page_title='Chacha Chaudhary: The Digital Guardian of Namami Gange', page_icon='C:\\Users\\nihar\\Downloads\\professor.png')
+
+parent_dir = os.path.dirname(os.path.abspath(__file__))
+logo_path = os.path.join(parent_dir, "nmcg_logo.svg")
+
+text = ["Chacha Chaudhary: The Digital Guardian of Namami Gange"]
+styles = {
+    "nav": {
+        "background-image": "linear-gradient(rgb(15, 18, 23), rgb(44, 62, 80))",
+        "justify-content": "left",
+        "height": "90px",
+    },
+    "img": {
+        "padding-right": "8px",
+        "height": "85px",
+        "width": "175px",
+    },
+    "span": {
+        "color": "white",
+        "font-size": "34px",
+        "width": "170%",
+        "font-family": "Times New Roman",
+    },
+    "active": {
+        "color": "white",
+        "font-size": "34px",
+        "width": "170%",
+        "font-family": "Times New Roman",
+    }
+}
+options = {
+    "show_menu": False,
+    "show_sidebar": False,
+}
+
+page = st_navbar(
+    text,
+    logo_path=logo_path,
+    styles=styles,
+    options=options,
+)
+
+st.header(" :blue[_Chacha Chaudhary's Gange Guide !_]", divider='rainbow')
+
+# Initialize chat history
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+
+# Function for voice recognition
+def recognize_speech():
+    recognizer = sr.Recognizer()
+    with sr.Microphone() as source:
+        st.write("Listening...")
+        audio = recognizer.listen(source)
+        st.write("Processing...")
+    try:
+        query = recognizer.recognize_google(audio)
+    except sr.UnknownValueError:
+        st.write("Sorry, I could not understand what you said.")
+        query = ""
+    return query
+
+# Add button for voice input
+if st.button("Speak"):
+    prompt = recognize_speech()
+    if prompt:
+        st.chat_message("user").markdown(prompt)
+        # Add user message to chat history
+        st.session_state.messages.append({"role": "user", "content": prompt})
+
+        response = genai_engine(prompt)
+        
+        # Display assistant response and image in a horizontal layout
+        st.write('<style>div.Widget.row-widget.stHorizontal</style>', unsafe_allow_html=True)
+        col1, col2 = st.columns([1, 10])
+        with col1:
+            st.image("E:\\Chacha\\chacha_small.png", width=50)
+        with col2:
+            st.markdown(response)
+
+        # Add assistant response to chat history
+        st.session_state.messages.append({"role": "assistant", "content": response})
+
+# React to user input
+if prompt := st.chat_input("What is up?"):
+    st.chat_message("user").markdown(prompt)
+    # Add user message to chat history
+    st.session_state.messages.append({"role": "user", "content": prompt})
+
+    response = genai_engine(prompt)
+    
+    # Display assistant response and image in a horizontal layout
+    st.write('<style>div.Widget.row-widget.stHorizontal</style>', unsafe_allow_html=True)
+    col1, col2 = st.columns([1, 10])
+    with col1:
+        st.image("E:\\Chacha\\chacha_small.png", width=50)
+    with col2:
+        st.markdown(response)
+
+    # Add assistant response to chat history
+    st.session_state.messages.append({"role": "assistant", "content": response})
+>>>>>>> 32e84ee0b39b60a128c7cace587dd13adbfd2aae

@@ -1,0 +1,10 @@
+<<<<<<< HEAD
+langchain
+ctransformers
+streamlit
+=======
+langchain
+ctransformers
+streamlit
+>>>>>>> 32e84ee0b39b60a128c7cace587dd13adbfd2aae
+Flask
