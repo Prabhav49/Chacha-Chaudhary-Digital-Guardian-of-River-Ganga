@@ -7,10 +7,6 @@ Chacha Chaudhary: The Digital Guardian of Namami Gange is an interactive chatbot
 
 ## Features
 
-- ***AI-Powered Robot Mascot***: 
-  - An interactive robot using advanced AI, ML, and Chatbot technologies.
-  - Equipped with a touch panel for seamless user interaction.
-  - Provides real-time information and guidance in the River Basin War Room & Ganga Museum.
 
 - ***Digital Avatar for Online Engagement***: 
   - A digital version of Chacha Chaudhary to engage users via the NMCG website.
